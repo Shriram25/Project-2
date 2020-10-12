@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Fortunes over a Decade</title>
+    <style>
+        #table-container {
+          border: 2px dashed red;
+          position: relative;
+          min-height: 2rem;
+        }
+      </style>
+    
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+  
+
+  </head>
+
+  <body>
+	  <div>
+        <img src="../static/img/500.png" alt="Fortune 500 Companies" width="1500" height="400">
+
+      </div>
+    <script src="../static/js/d3table.js"></script>
+    
+    <div id="table-container" style="width: 100%;">
+        <ul style="list-style: none;">
+            <li>"Rank" </li>
+          {% for company in data %}
+            <li>{{ company.rank }}:"   " : {{ company.company }} : {{ company.profit }} {{ company.revenue }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    
+
+  </body>
+
+</html>
